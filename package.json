@@ -1,0 +1,9 @@
+{
+  "name": "specs",
+  "version": "0.0.1",
+  "description": "Spec App",
+  "author": "eBay",
+  "dependencies": {
+    "restify": "~2.6.0"
+  }
+}

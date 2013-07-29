@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SpecApp">
+  <head>
+    <meta charset="utf-8">
+    <title ng-cloak>{{spec.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="bower_components/angular-unstable/angular.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/app.js"></script>
+
+  </head>
+  <body>
+  <div class="container">
+    <div class="navbar navbar-fixed-top">
+      <a class="navbar-brand" ng-href="{{root}}">{{spec.title}}</a>
+      <a href="https://github.scm.corp.ebay.com/UX-Spec/Spec/issues" class="btn btn-default pull-right">Feedback</a>
+    </div>
+  </div>
+  
+  <div class="col-12">
+	  <h3>Versions</h3>
+	    
+	  <ul class="list-inline versions">
+	    <li ng-repeat="version in spec.versions"><a class="thumbnail" ng-href="{{root}}versions/{{version}}/">{{version}}</a></li>
+	  </ul>
+	</div>
+
+  <footer class="col-12">
+    <p class="pull-right small">&copy; eBay Inc.</p>
+  </footer>
+
+  </body>
+</html>

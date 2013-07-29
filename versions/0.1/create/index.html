@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SpecApp">
+  <head>
+    <meta charset="utf-8">
+    <title ng-cloak>{{title}} - Version {{version}} - {{spec.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../css/styles.css" rel="stylesheet" />
+    <script src="../../../bower_components/angular-unstable/angular.min.js"></script>
+    <script src="../../../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../../../js/app.js"></script>
+
+  </head>
+  <body>
+  <div class="container">
+    <div class="navbar navbar-fixed-top">
+      <a class="navbar-brand" ng-href="{{base}}">{{spec.title}}</a>
+      <a href="https://github.scm.corp.ebay.com/UX-Spec/Spec/issues" class="btn btn-default pull-right">Feedback</a>
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-default dropdown-toggle">
+          Version {{version}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li ng-repeat="version in spec.versions"><a ng-href="{{root}}versions/{{version}}/">Version {{version}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-2 left-nav">
+    <div class="well well-small">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a ng-href="{{base}}">History</a></li>
+        <li ng-repeat="route in routes" ng-class="{active: folder == route.folder}">
+          <a ng-href="{{base}}{{route.folder}}/">{{route.title}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-2 col-offset-2">
+    <h3>Notes</h3>
+    <div ng-include="base + folder + '/notes.html'" ng-animate="{enter: 'animated fadeIn'}"></div>
+  </div>
+  <div class="col-8">
+    <h3>Spec Diagram</h3>
+    <a ng-href="{{base}}{{folder}}/spec.png" target="_blank"><img ng-src="{{base}}{{folder}}/spec.png" class="graphic" /></a>
+  </div>
+  
+  <hr />
+
+  <div class="col-10 col-offset-2">
+    <h3>Mock Graphic</h3>
+    <a ng-href="{{base}}{{folder}}/mock.png" target="_blank"><img ng-src="{{base}}{{folder}}/mock.png" class="graphic" /></a>
+  </div>
+
+  <footer class="col-12">
+    <p class="pull-right small">&copy; eBay Inc.</p>
+  </footer>
+
+  </body>
+</html>

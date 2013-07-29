@@ -1,0 +1,26 @@
+body {
+	padding-top: 70px;
+}
+
+.navbar .btn {
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.graphic {
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+.left-nav {
+	position: absolute;
+	z-index: 5000;
+}
+
+.versions a {
+	text-align: center;
+	line-height: 65px;
+	font-size: 25px;
+	width: 75px;
+	height: 75px;
+}
